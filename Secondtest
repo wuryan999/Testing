@@ -4,6 +4,16 @@ app = Flask(__name__)
 @app.route('/')
 def hello_world():
     return "Hello, World!"
+@app.route('/upload/',methods = ['GET','POST'])
+def upload_file():
+    if request.method =='POST':
+        files = request.files.getlist('file[]',None)
+        if files:
+            for file in files:
+                filename = secure_filename(file.filename)
+                file.save(os.path.join(app.config['UPLOAD_FOLDER'],filename))
+            return hello()
+    return render_template('file_upload.html')
 
 if __name__ == "__main__":
     app.run(debug=True)

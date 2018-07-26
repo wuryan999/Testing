@@ -1,0 +1,14 @@
+
+<html>
+<head>
+<title>Test page</title>
+</head>
+<h1>Home Page</h1>
+    <body>
+        {%for post in post %}
+         <h1>{{post.Title}}</h1>
+          <p>By {{post.Author}} on {{post.Date}}<p>
+         <p>{{post.Post}}<p>
+    {% endfor %}
+    </body>
+</html>
