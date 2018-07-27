@@ -1,0 +1,10 @@
+body{
+    font-family: Arial;
+    padding-top: 10px;
+    padding-bottom: 40px;
+    background-color: #fdf;
+}
+h2 {font-size: 20px}
+div.welcome h2{font-size: 30px}
+
+
